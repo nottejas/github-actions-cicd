@@ -5,8 +5,12 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.json({ message: 'Welcome to CI/CD Demo App!' });
-});
+    res.json({ 
+        message: 'Welcome to CI/CD Demo App!',
+        version: '2.0',
+        author: 'Tejas Padmakar'
+    });
+})
 
 app.get('/health', (req, res) => {
     res.json({ status: 'UP', timestamp: new Date().toISOString() });
